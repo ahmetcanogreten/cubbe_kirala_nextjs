@@ -6,10 +6,13 @@ export default function AdvertisementCard({ post }: { post: any }) {
                 <div className="p-4"></div>
 
                 <div className="flex flex-col w-full">
-                    <InfoRow title="Fakülte" content={post.fakulte} />
-                    <InfoRow title="Beden" content={post.beden} />
-                    <InfoRow title="Açıklama" content={post.content} />
-                    <InfoRow title="Telefon" content={post.phone} />
+                    {
+                        post.has_fular ? <InfoRow title="Fular" content={post.color} /> : <InfoRow title="Fular" content="Yok" />
+                    }
+                    {
+                        post.has_cubbe ? <InfoRow title="Cübbe" content={post.size} /> : <InfoRow title="Cübbe" content="Yok" />
+                    }
+                    <InfoRow title="Açıklama" content={post.description} />
                 </div>
             </div>
             <br />
